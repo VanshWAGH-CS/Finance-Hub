@@ -1,0 +1,91 @@
+Build a production-ready Machine Learning web application using Python and Flask.
+
+PROJECT GOAL:
+Create a real-world ML application that predicts:
+1) House Prices (Regression)
+2) Loan Eligibility (Classification)
+
+IMPORTANT:
+- Do NOT ask users to upload datasets.
+- Models are already trained and saved as .pkl files.
+- Users will only provide form-based inputs.
+
+TECH STACK:
+- Backend: Python (Flask)
+- Frontend: HTML, CSS, Bootstrap
+- ML: scikit-learn / XGBoost / LightGBM
+- Deployment: Replit
+
+PROJECT STRUCTURE (MUST FOLLOW EXACTLY):
+
+ml-real-estate-app/
+│
+├── models/
+│   ├── house_price_model.pkl
+│   ├── loan_eligibility_model.pkl
+│
+├── app.py
+├── requirements.txt
+│
+├── templates/
+│   ├── index.html        # Home page
+│   ├── house.html        # House price input form
+│   ├── loan.html         # Loan eligibility input form
+│   ├── result.html       # Prediction result page
+│
+├── static/
+│   └── style.css
+│
+└── README.md
+
+BACKEND REQUIREMENTS:
+- Load .pkl models using joblib
+- Flask routes:
+  /               → Home page
+  /house          → House price form
+  /loan           → Loan eligibility form
+  /predict-house  → POST route for house prediction
+  /predict-loan   → POST route for loan prediction
+- Handle invalid inputs gracefully
+- Return predictions clearly
+
+HOUSE PRICE INPUT FIELDS:
+- Bedrooms
+- Bathrooms
+- Flat Area (sqft)
+- Lot Area (sqft)
+- Condition (1–5)
+- Grade (1–13)
+- Zipcode
+
+LOAN ELIGIBILITY INPUT FIELDS:
+- Applicant Income
+- Coapplicant Income
+- Loan Amount
+- Loan Term (months)
+- Credit History (0 or 1)
+- Property Area (Urban / Semiurban / Rural)
+- Married (Yes / No)
+- Education (Graduate / Not Graduate)
+
+FRONTEND REQUIREMENTS:
+- Clean, professional UI using Bootstrap
+- Landing page with two cards:
+  - House Price Prediction
+  - Loan Eligibility Prediction
+- Separate pages for each prediction
+- Display results in a highlighted card
+- Responsive design
+- Real-life usable layout
+
+DEPLOYMENT REQUIREMENTS:
+- app.py must run using: python app.py
+- Bind Flask app to host="0.0.0.0"
+- Use PORT environment variable for Replit
+- Include all dependencies in requirements.txt
+- App should be fully runnable on Replit without changes
+
+OUTPUT:
+- A fully working ML web application
+- Ready to deploy and share
+- Suitable for resume and real-world use

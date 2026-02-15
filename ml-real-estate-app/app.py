@@ -14,7 +14,7 @@ from reportlab.lib.pagesizes import LETTER
 from reportlab.lib import colors
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your-secure-fintech-key-2026'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bank_v2.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=15)

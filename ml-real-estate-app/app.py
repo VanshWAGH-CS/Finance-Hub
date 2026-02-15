@@ -15,7 +15,7 @@ from reportlab.lib import colors
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bank_v2.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/bank_v2.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=15)
 
@@ -62,8 +62,9 @@ def load_model(path):
     return None
 
 # Load models safely
-house_model = load_model(HOUSE_MODEL_PATH)
-loan_model = load_model(LOAN_MODEL_PATH)
+house_model = None
+loan_model = None
+
 
 @app.route('/')
 def index():
